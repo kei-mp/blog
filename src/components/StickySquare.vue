@@ -10,9 +10,13 @@ const posts = ref([]);
 // Fetch blog posts data when component mounts
 onMounted(async () => {
   try {
-    // Get all blog posts using Astro's content collections API
     const response = await fetch('/api/posts.json');
-    posts.value = await response.json();
+    const data = await response.json();
+    // Transform the data to include necessary properties
+    posts.value = data.map(post => ({
+      ...post,
+      slug: post.slug || post.id // Use slug if available, fallback to id
+    }));
     
     createGraph();
   } catch (error) {
@@ -44,10 +48,24 @@ const createGraph = () => {
   const nodes = svg.selectAll('circle')
     .data(posts.value)
     .join('circle')
-    .attr('r', 4) // Slightly smaller radius
+    .attr('r', 4)
     .attr('fill', '#2337ff')
-    .style('cursor', 'pointer')
+    .style('cursor', 'pointer');
+
+  // Add hover effects
+  nodes
+    .on('mouseover', function() {
+      d3.select(this)
+        .attr('fill', '#4757ff')
+        .attr('r', 6);
+    })
+    .on('mouseout', function() {
+      d3.select(this)
+        .attr('fill', '#2337ff')
+        .attr('r', 4);
+    })
     .on('click', (event, d) => {
+      // Navigate to the blog post using the slug from frontmatter
       window.location.href = `/blog/${d.slug}`;
     });
 
