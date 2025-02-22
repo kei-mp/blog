@@ -4,13 +4,13 @@
 
 <style scoped>
 .sticky-square {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   background-color: red;
   position: sticky;
   top: 1em;
   float: right;
-  margin-right: -150px;
+  margin-right: -250px;
   /* Ensure the square stays above content */
   z-index: 10;
 }
