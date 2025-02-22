@@ -23,6 +23,7 @@ onMounted(async () => {
 const createGraph = () => {
   const width = 200;
   const height = 200;
+  const padding = 10; // Padding from edges
 
   // Create the SVG container
   const svg = d3.select(graphContainer.value)
@@ -30,17 +31,20 @@ const createGraph = () => {
     .attr('width', width)
     .attr('height', height);
 
-  // Create the simulation
+  // Create the simulation with adjusted forces
   const simulation = d3.forceSimulation(posts.value)
-    .force('charge', d3.forceManyBody().strength(-50))
+    .force('charge', d3.forceManyBody().strength(-30)) // Reduced repulsion
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(10));
+    .force('collision', d3.forceCollide().radius(6))
+    // Add x and y forces to keep nodes within bounds
+    .force('x', d3.forceX(width / 2).strength(0.1))
+    .force('y', d3.forceY(height / 2).strength(0.1));
 
   // Create the nodes
   const nodes = svg.selectAll('circle')
     .data(posts.value)
     .join('circle')
-    .attr('r', 5)
+    .attr('r', 4) // Slightly smaller radius
     .attr('fill', '#2337ff')
     .style('cursor', 'pointer')
     .on('click', (event, d) => {
@@ -49,9 +53,12 @@ const createGraph = () => {
 
   // Update node positions on each simulation tick
   simulation.on('tick', () => {
-    nodes
-      .attr('cx', d => d.x)
-      .attr('cy', d => d.y);
+    nodes.attr('cx', d => {
+      return Math.max(padding, Math.min(width - padding, d.x));
+    })
+    .attr('cy', d => {
+      return Math.max(padding, Math.min(height - padding, d.y));
+    });
   });
 }
 </script>
@@ -76,6 +83,7 @@ const createGraph = () => {
   z-index: 10;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure nothing renders outside the container */
 }
 
 .loading {
