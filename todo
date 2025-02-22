@@ -1,0 +1,2 @@
+- [x] add graph view
+- [ ] fix bug where error is thrown on start saying invalid cache and works with a refresh
