@@ -6,3 +6,5 @@ heroImage: '/subway.webp'
 ---
 
 I can't find where I read it from, but an way to think about productivity systems is like making sandwiches. Imagine you're working at Subway, where incoming sandwich orders symbolize the tasks you need to complete. What matters most is that you get the sandwiches out quickly, otherwise you're going to have a lot of disgruntaled customers. Yes you need a system to keep track of and prioritize the orders, but you can't spend more time managing this system than getting orders out.
+
+It's a pattern I've seen in underperforming members in my team, they think they're being productive with elaborite productivity systems yet they don't realize they're essentially just procrastinating and not focusing on the main thing, which is getting sandwiches out.
