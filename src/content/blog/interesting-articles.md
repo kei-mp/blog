@@ -1,5 +1,5 @@
 ---
-title: 'Articles I Like'
+title: 'Interesting Articles'
 description: 'Have these for future reference but also to help others discover them'
 pubDate: 'Mar 06 2025'
 heroImage: '/edison.jpg'
