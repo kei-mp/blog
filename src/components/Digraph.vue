@@ -25,8 +25,9 @@ onMounted(async () => {
 });
 
 const createGraph = () => {
-  const width = 200;
-  const height = 200;
+  // Make width responsive on mobile
+  const width = window.innerWidth <= 720 ? window.innerWidth - 40 : 200;
+  const height = window.innerWidth <= 720 ? 200 : 200;
   const padding = 20; // Increased padding to accommodate labels
 
   // Create the SVG container
@@ -101,12 +102,21 @@ const createGraph = () => {
   background-color: #ffffff;
   position: sticky;
   top: 1em;
-  float: right;
-  margin-right: -250px;
   z-index: 10;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: visible; /* Changed to visible to show labels */
+  overflow: visible;
+  grid-column: 2;
+}
+
+/* Add media query for mobile screens */
+@media (max-width: 720px) {
+  .graph-view {
+    grid-column: 1;
+    width: 100%;
+    margin-bottom: 2em;
+    position: relative;
+  }
 }
 
 .loading {
@@ -117,4 +127,4 @@ const createGraph = () => {
   font-size: 0.8em;
   color: #666;
 }
-</style> 
+</style>

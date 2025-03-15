@@ -14,26 +14,61 @@ import Digraph from '../components/Digraph.vue';
 	<body>
 		<Header />
 		<main>
-			<Digraph client:load />
-			<h3>Insights on Electro-Mechanical Engineering and Software Innovation</h3>
-			<p>
-				<!-- should say right on desktops and top on mobiles -->
-				Click on a post using the graph on the right, or see <a href="/blog/graph">how I built it</a>.
-			</p>
-			<p>If you're not sure which to read, try:</p>
+			<div class="content">
+				<h3>Insights on Electro-Mechanical Engineering and Software Innovation</h3>
+				<p>
+				<!-- Update text based on screen size -->
+				<span class="desktop-text">Click on a post using the graph on the right, or see</span>
+				<span class="mobile-text">Click on a post using the graph above, or see</span>
+				<a href="/blog/graph">how I built it</a>.
+				</p>
+				<p>If you're not sure which to read, try:</p>
 			<ul>
 				<li><a href="/blog/subway">The Productivity Trap</a> - Why productivity systems should be like Subway.</li>
 			</ul>
 			<p>Or, check out some of my favorite <a href="/blog/interesting-articles">articles</a> and <a href="/blog/interesting-talks">talks</a> that I find inspiring.</p>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			
+			</div>
+			<Digraph client:load />
 		</main>
+			
 		<Footer />
 	</body>
 </html>
+
+<style>
+	main {
+		width: 720px;
+		max-width: calc(100% - 2em);
+		margin: auto;
+		padding: 3em 1em;
+		display: grid;
+		grid-template-columns: 1fr 200px;
+		gap: 2em;
+	}
+
+	.content {
+	  grid-column: 1;
+	}
+	
+	.mobile-text {
+	  display: none;
+	}
+  
+	@media (max-width: 720px) {
+	  main {
+		grid-template-columns: 1fr;
+	  }
+	  
+	  .content {
+		grid-row: 2;
+	  }
+  
+	  .desktop-text {
+		display: none;
+	  }
+  
+	  .mobile-text {
+		display: inline;
+	  }
+	}
+  </style>
