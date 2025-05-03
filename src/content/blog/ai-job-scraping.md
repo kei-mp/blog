@@ -30,3 +30,26 @@ Now I need to find if there's a way to programatically go through each post and 
 I probably don't need all the referance and tracking IDs, if I try simply navigate to: `https://www.linkedin.com/jobs/view/4216481674/` does it work? Success. Yes it does.
 
 ### Parsing the job page
+
+The job description is in a collapsed card with a title "About the job" with a `See more` link at the bottom. This appears to the same for all jobs. Now I need to figure out how to parse it.
+
+Inspecting the collapse card shows, the following:
+
+```html
+<article class="jobs-description__container">
+    <!-- All the job description details -->
+</article>
+```
+
+So I can navigate to this page, copy this entire html element, and that should be good enough for the AI to parse and pull out the most relevant jobs. Come on LinkedIn, make it at least a little hard. Was initially expecting to have to simulate clicks to access the data but in hindsight that would have been a poor user experience if they data was fetched from the backend.
+
+## The Implementation
+
+Now before starting it's always good to take stock and reassess basic assumptions. In this case, the basic assumption was that it would be faster to write a script than to manually parse these job descriptions. After investigating the issue properly, we'll need to:
+
+- Write a python script to access the jobs web page using selenium (20 mins)
+- Write code to navigate to the each job post, and pull out the job description (10 mins)
+- Send that job description html to an AI api with a prompt to return a list of skills. (30 mins)
+- Write a way to aggregate the data (20 mins)
+
+So let's say 1.5 hours to do this via scripting and AI. If we optimistically assume 3 minutes to do this manually for a job, it would be 8.5 hours. It's a no-brainer in the sense that if I tried to do this manually I would end up blowing my brains out.
