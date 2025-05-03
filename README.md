@@ -6,7 +6,7 @@ Welcome to the GitHub repo for my personal blog. Here, I share my thoughts, lear
 
 Here's a look at the blog:
 
-![Screenshot of the blog homepage.](home-page.png)
+![msedge_pQeW2Fsh5v](https://github.com/user-attachments/assets/83483970-d9bc-44d5-9bc4-f6a81f278832)
 
 ## Tech Stack
 
