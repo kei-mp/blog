@@ -52,4 +52,8 @@ Now before starting it's always good to take stock and reassess basic assumption
 - Send that job description html to an AI api with a prompt to return a list of skills. (30 mins)
 - Write a way to aggregate the data (20 mins)
 
-So let's say 1.5 hours to do this via scripting and AI. If we optimistically assume 3 minutes to do this manually for a job, it would be 8.5 hours. It's a no-brainer in the sense that if I tried to do this manually I would end up blowing my brains out.
+So let's say 1.5 hours to do this via scripting and AI. If we optimistically assume 2 minutes to do this manually for a job, it would be 6 hours. It's a no-brainer in the sense that if I tried to do this manually I would end up blowing my brains out.
+
+## The code
+
+The code for the script can be found here: [AI Job Scraping Script](https://github.com/kei-mp/ai-job-scraping)
