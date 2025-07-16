@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content';
 
 export async function GET() {
   try {
-    const posts = await getCollection('blog');
+    const posts = await getCollection('content');
     
     // Transform posts into the format we need for the graph
     const graphData = posts.map(post => ({
