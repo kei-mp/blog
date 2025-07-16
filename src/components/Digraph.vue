@@ -3,19 +3,15 @@ import { onMounted, ref } from 'vue';
 import * as d3 from 'd3';
 
 const graphContainer = ref(null);
-
-// This will store our blog post data
 const posts = ref([]);
 
-// Fetch blog posts data when component mounts
 onMounted(async () => {
   try {
     const response = await fetch('/api/posts.json');
     const data = await response.json();
-    // Transform the data to include necessary properties
     posts.value = data.map(post => ({
       ...post,
-      slug: post.slug || post.id // Use slug if available, fallback to id
+      slug: post.slug || post.id
     }));
     
     createGraph();
@@ -25,27 +21,25 @@ onMounted(async () => {
 });
 
 const createGraph = () => {
-  // Make width responsive on mobile
+  // responsive on mobile
   const width = window.innerWidth <= 720 ? window.innerWidth - 40 : 200;
   const height = window.innerWidth <= 720 ? 200 : 200;
-  const padding = 20; // Increased padding to accommodate labels
+  const padding = 20;
 
-  // Create the SVG container
   const svg = d3.select(graphContainer.value)
     .append('svg')
     .attr('width', width)
     .attr('height', height);
 
-  // Create a group for each node that will contain both circle and text
+  // group for each node that will contain both circle and text
   const nodes = svg.selectAll('g')
     .data(posts.value)
     .join('g')
     .style('cursor', 'pointer')
     .on('click', (event, d) => {
-      window.location.href = `/blog/${d.slug}`;
+      window.location.href = `/${d.slug}`;
     });
 
-  // Add circles to each group
   nodes.append('circle')
     .attr('r', 4)
     .attr('fill', '#2337ff')
@@ -60,23 +54,22 @@ const createGraph = () => {
         .attr('r', 4);
     });
 
-  // Add text labels to each group
   nodes.append('text')
     .text(d => d.title)
     .attr('font-size', '8px')
     .attr('text-anchor', 'middle')
     .attr('dy', '-8px')
-    .style('pointer-events', 'none'); // Prevent text from interfering with hover/click
+    .style('pointer-events', 'none'); // prevent text from interfering with hover/click
 
-  // Update simulation with adjusted forces
+  // update simulation with adjusted forces
   const simulation = d3.forceSimulation(posts.value)
-    .force('charge', d3.forceManyBody().strength(-100)) // Increased repulsion
+    .force('charge', d3.forceManyBody().strength(-100)) // increased repulsion
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(30)) // Increased collision radius
+    .force('collision', d3.forceCollide().radius(30)) // increased collision radius
     .force('x', d3.forceX(width / 2).strength(0.1))
     .force('y', d3.forceY(height / 2).strength(0.1));
 
-  // Update node positions on each simulation tick
+  // update node positions on each simulation tick
   simulation.on('tick', () => {
     nodes.attr('transform', d => {
       const x = Math.max(padding, Math.min(width - padding, d.x));
@@ -109,7 +102,7 @@ const createGraph = () => {
   grid-column: 2;
 }
 
-/* Add media query for mobile screens */
+/* media query for mobile screens */
 @media (max-width: 720px) {
   .graph-view {
     grid-column: 1;
