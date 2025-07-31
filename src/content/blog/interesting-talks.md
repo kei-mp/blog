@@ -2,7 +2,6 @@
 title: 'Interesting Talks'
 description: 'Have these for future reference but also to help others discover them'
 pubDate: 'Mar 09 2025'
-heroImage: '/talk.jpg'
 ---
 
 <style>
