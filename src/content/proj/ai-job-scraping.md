@@ -5,7 +5,7 @@ pubDate: 'May 03 2025'
 heroImage: '/job-scraping-ai.jfif'
 ---
 
-I've been working in the oil & gas industry for the last 3 years, albeit more on the tech side which is more transferable. It's been a great challenge and learning experience but it was never meant to be forever and the major challenges have been solved. I've been looking at getting into the defense industry for a while but am uncertain about what are the most important and sought-after skills.
+I've been working in the oil & gas industry for the last 3 years, albeit more on the tech side which is more transferable. It's been a great challenge and learning experience but it was never meant to be forever and the major challenges have been solved. I've been looking to change industries for a while but am uncertain about what are the most important and sought-after skills.
 
 I started looking at manufacturing/automation-related jobs that allow me to use my broad-ranging skillset in mechanical, electrical, and software. The tricky part is that sometimes the same roles can have different titles, or the same titles can have vastly different responsibilities. When thinking about my past experiences to tailor my resume, I wanted to leverage the most sought after skills. Would a hiring manager be impressed if I had essentially built an in-house ERP? Maybe. Would they be impressed about building a greenfield RFID tracking system? Almost definitely.
 
