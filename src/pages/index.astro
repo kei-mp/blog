@@ -14,6 +14,7 @@ import Digraph from '../components/Digraph.vue';
 	<body>
 		<Header />
 		<main>
+			<Digraph client:load />
 			<div class="content">
 				<h3>Insights on Electro-Mechanical Engineering and Software Innovation</h3>
 				<p>Welcome to my blog, check out the <a href="/about">about</a> page if you want to learn about me and why I built this blog, otherwise read on.</p>
@@ -30,47 +31,9 @@ import Digraph from '../components/Digraph.vue';
 			</ul>
 			<p>Or, check out some of my favorite <a href="/blog/interesting-articles">articles</a> and <a href="/blog/interesting-talks">talks</a> that I find inspiring.</p>
 			</div>
-			<Digraph client:load />
 		</main>
 			
 		<Footer />
 	</body>
 </html>
 
-<style>
-	main {
-		width: 720px;
-		max-width: calc(100% - 2em);
-		margin: auto;
-		padding: 3em 1em;
-		display: grid;
-		grid-template-columns: 1fr 200px;
-		gap: 2em;
-	}
-
-	.content {
-	  grid-column: 1;
-	}
-	
-	.mobile-text {
-	  display: none;
-	}
-  
-	@media (max-width: 720px) {
-	  main {
-		grid-template-columns: 1fr;
-	  }
-	  
-	  .content {
-		grid-row: 2;
-	  }
-  
-	  .desktop-text {
-		display: none;
-	  }
-  
-	  .mobile-text {
-		display: inline;
-	  }
-	}
-  </style>
