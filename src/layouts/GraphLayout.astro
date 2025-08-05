@@ -54,6 +54,7 @@ import Digraph from "../components/Digraph.vue";
 		height: 300px;
 		order: 2;
 		position: sticky;
+		top: 0;
 	}
 
 	.content {
@@ -81,7 +82,6 @@ import Digraph from "../components/Digraph.vue";
 </style>
 
 <script is:inline>
-	// todo: move to layout file
 	// prevent flash of unstyled content
 	(function () {
 		const savedTheme = localStorage.getItem("theme");
