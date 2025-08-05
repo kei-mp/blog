@@ -1,102 +1,43 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Digraph from "../components/Digraph.vue";
+import GraphLayout from "../layouts/GraphLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="site-body">
-		<div class="site-content">
-			<Header />
-			<main class="main-container">
-				<div class="graph-container">
-					<Digraph client:load />
-				</div>
-				<div class="content">
-					<h3>
-						Insights on Electro-Mechanical Engineering and Software Innovation
-					</h3>
-					<p>
-						Welcome to my blog, check out the <a href="/about">about</a>
-						page if you want to learn about me and why I built this blog, otherwise
-						read on.
-					</p>
-					<p>
-						<!-- Update text based on screen size -->
-						<span class="desktop-text"
-							>To view a blog post, click on a post using the graph on the
-							right, or see</span
-						>
-						<span class="mobile-text"
-							>To view a blog post, click on a post using the graph above, or
-							see</span
-						>
-						<a href="/blog/graph">how I built it</a>.
-					</p>
-					<p>If you're not sure which to read, try:</p>
-					<ul>
-						<li>
-							<a href="/blog/quality-as-code">Quality as Code</a> - Why you should
-							manage your procedures like software.
-						</li>
-						<li>
-							<a href="/proj/ut-mech">Mechanical UT Scanner</a> - Building a mechanically-actuated
-							wall-thickness scanning inline robotic tool, and why it's not a good
-							idea.
-						</li>
-					</ul>
-					<p>
-						Or, check out some of my favorite <a
-							href="/blog/interesting-articles">articles</a
-						> and <a href="/blog/interesting-talks">talks</a> that I find inspiring.
-					</p>
-				</div>
-			</main>
-		</div>
-		<Footer />
-	</body>
-</html>
+<GraphLayout>
+	<h3>Insights on Electro-Mechanical Engineering and Software Innovation</h3>
+	<p>
+		Welcome to my blog, check out the <a href="/about">about</a>
+		page if you want to learn about me and why I built this blog, otherwise read
+		on.
+	</p>
+	<p>
+		<!-- update text based on screen size -->
+		<span class="desktop-text"
+			>To view a blog post, click on a post using the graph on the right, or see</span
+		>
+		<span class="mobile-text"
+			>To view a blog post, click on a post using the graph above, or see</span
+		>
+		<a href="/blog/graph">how I built it</a>.
+	</p>
+	<p>If you're not sure which to read, try:</p>
+	<ul>
+		<li>
+			<a href="/blog/quality-as-code">Quality as Code</a> - Why you should manage
+			your procedures like software.
+		</li>
+		<li>
+			<a href="/proj/ut-mech">Mechanical UT Scanner</a> - Building a mechanically-actuated
+			wall-thickness scanning inline robotic tool, and why it's not a good idea.
+		</li>
+	</ul>
+	<p>
+		Or, check out some of my favorite <a href="/blog/interesting-articles"
+			>articles</a
+		> and <a href="/blog/interesting-talks">talks</a> that I find inspiring.
+	</p>
+</GraphLayout>
 
 <style>
-	.site-body {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	.site-content {
-		flex: 1;
-	}
-
-	/* desktop-first layout */
-	.main-container {
-		display: grid;
-		grid-template-areas: "content graph";
-		grid-template-columns: 61.8% 38.2%;
-		max-width: 920px;
-		margin: 0 auto;
-		align-items: start;
-	}
-
-	.graph-container {
-		grid-area: graph;
-		width: 100%;
-		height: 300px;
-		order: 2;
-		position: sticky;
-	}
-
-	.content {
-		grid-area: content;
-		order: 1;
-	}
-
 	.desktop-text {
 		display: inline;
 	}
@@ -105,23 +46,7 @@ import Digraph from "../components/Digraph.vue";
 		display: none;
 	}
 
-	/* mobile/tablet layout */
 	@media (max-width: 920px) {
-		.main-container {
-			grid-template-areas: "graph" "content";
-			grid-template-columns: 1fr;
-		}
-
-		.graph-container {
-			height: 100px;
-			position: relative;
-			order: 1;
-		}
-
-		.content {
-			order: 2;
-		}
-
 		.desktop-text {
 			display: none;
 		}
@@ -131,16 +56,3 @@ import Digraph from "../components/Digraph.vue";
 		}
 	}
 </style>
-
-<script is:inline>
-	// todo: move to layout file
-	// prevent flash of unstyled content
-	(function () {
-		const savedTheme = localStorage.getItem("theme");
-		const systemPrefersDark = window.matchMedia(
-			"(prefers-color-scheme: dark)",
-		).matches;
-		const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
-		document.documentElement.setAttribute("data-theme", theme);
-	})();
-</script>
