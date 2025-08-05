@@ -3,6 +3,7 @@ title: 'Mechanical UT Scanner'
 description: 'Building a mechanically-actuated wall-thickness scanning inline robotic tool, and why it''s not a good idea'
 pubDate: 'Jul 30 2025'
 heroImage: '/ut-mech/hero.png'
+tags: ["#mech", "#cad"]
 ---
 
 When I was busy looking for work in the USA after building a software and mechatronics in Cape Town for the passed 3 years, I didn't have much of a mechanical-engineering oriented portfolio to show during potential interviews. The reality was that most of my free time was spent upskilling in software and architecture design and mechatronics and boring stuff like ISO 9001 audits.
