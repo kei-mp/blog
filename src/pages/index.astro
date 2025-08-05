@@ -11,81 +11,92 @@ import Digraph from "../components/Digraph.vue";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header />
-		<main class="main-container">
-			<div class="graph-container">
-				<Digraph client:load />
-			</div>
-			<div class="content">
-				<h3>
-					Insights on Electro-Mechanical Engineering and Software Innovation
-				</h3>
-				<p>
-					Welcome to my blog, check out the <a href="/about">about</a>
-					page if you want to learn about me and why I built this blog, otherwise
-					read on.
-				</p>
-				<p>
-					<!-- Update text based on screen size -->
-					<span class="desktop-text"
-						>To view a blog post, click on a post using the graph on the right,
-						or see</span
-					>
-					<span class="mobile-text"
-						>To view a blog post, click on a post using the graph above, or see</span
-					>
-					<a href="/blog/graph">how I built it</a>.
-				</p>
-				<p>If you're not sure which to read, try:</p>
-				<ul>
-					<li>
-						<a href="/blog/quality-as-code">Quality as Code</a> - Why you should
-						manage your procedures like software.
-					</li>
-					<li>
-						<a href="/proj/ut-mech">Mechanical UT Scanner</a> - Building a mechanically-actuated
-						wall-thickness scanning inline robotic tool, and why it's not a good
-						idea.
-					</li>
-				</ul>
-				<p>
-					Or, check out some of my favorite <a href="/blog/interesting-articles"
-						>articles</a
-					> and <a href="/blog/interesting-talks">talks</a> that I find inspiring.
-				</p>
-			</div>
-		</main>
-
+	<body class="site-body">
+		<div class="site-content">
+			<Header />
+			<main class="main-container">
+				<div class="graph-container">
+					<Digraph client:load />
+				</div>
+				<div class="content">
+					<h3>
+						Insights on Electro-Mechanical Engineering and Software Innovation
+					</h3>
+					<p>
+						Welcome to my blog, check out the <a href="/about">about</a>
+						page if you want to learn about me and why I built this blog, otherwise
+						read on.
+					</p>
+					<p>
+						<!-- Update text based on screen size -->
+						<span class="desktop-text"
+							>To view a blog post, click on a post using the graph on the
+							right, or see</span
+						>
+						<span class="mobile-text"
+							>To view a blog post, click on a post using the graph above, or
+							see</span
+						>
+						<a href="/blog/graph">how I built it</a>.
+					</p>
+					<p>If you're not sure which to read, try:</p>
+					<ul>
+						<li>
+							<a href="/blog/quality-as-code">Quality as Code</a> - Why you should
+							manage your procedures like software.
+						</li>
+						<li>
+							<a href="/proj/ut-mech">Mechanical UT Scanner</a> - Building a mechanically-actuated
+							wall-thickness scanning inline robotic tool, and why it's not a good
+							idea.
+						</li>
+					</ul>
+					<p>
+						Or, check out some of my favorite <a
+							href="/blog/interesting-articles">articles</a
+						> and <a href="/blog/interesting-talks">talks</a> that I find inspiring.
+					</p>
+				</div>
+			</main>
+		</div>
 		<Footer />
 	</body>
 </html>
 
 <style>
-.main-container {
-  display: grid;
-  grid-template-areas: "graph" "content";
-  gap: 2rem;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+	.site-body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
 
-.graph-container {
-  grid-area: graph;
-}
+	.site-content {
+		flex: 1;
+	}
 
-.content {
-  grid-area: content;
-}
+	.main-container {
+		display: grid;
+		grid-template-areas: "graph" "content";
+		gap: 2rem;
+		max-width: 920px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.graph-container {
+		grid-area: graph;
+	}
+
+	.content {
+		grid-area: content;
+	}
 
 	@media (min-width: 920px) {
-  .main-container {
-    grid-template-areas: "content graph";
-    grid-template-columns: 61.8% 38.2%;
-    align-items: start;
-  }
-
+		.main-container {
+			grid-template-areas: "content graph";
+			grid-template-columns: 61.8% 38.2%;
+			align-items: start;
+		}
 
 		.graph-container {
 			order: 2;
