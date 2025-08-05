@@ -12,7 +12,8 @@ import GraphLayout from "../layouts/GraphLayout.astro";
 	<p>
 		<!-- update text based on screen size -->
 		<span class="desktop-text"
-			>To view a blog post, click on a post using the graph on the right, or see</span
+			>To view a blog post, click on a post using the graph on the right,
+			or see</span
 		>
 		<span class="mobile-text"
 			>To view a blog post, click on a post using the graph above, or see</span
@@ -22,12 +23,13 @@ import GraphLayout from "../layouts/GraphLayout.astro";
 	<p>If you're not sure which to read, try:</p>
 	<ul>
 		<li>
-			<a href="/blog/quality-as-code">Quality as Code</a> - Why you should manage
-			your procedures like software.
+			<a href="/blog/quality-as-code">Quality as Code</a> - Why you should
+			manage your procedures like software.
 		</li>
 		<li>
 			<a href="/proj/ut-mech">Mechanical UT Scanner</a> - Building a mechanically-actuated
-			wall-thickness scanning inline robotic tool, and why it's not a good idea.
+			wall-thickness scanning inline robotic tool, and why it's not a good
+			idea.
 		</li>
 	</ul>
 	<p>
@@ -38,6 +40,10 @@ import GraphLayout from "../layouts/GraphLayout.astro";
 </GraphLayout>
 
 <style>
+	h3:first-child {
+		margin-top: 0;
+	}
+
 	.desktop-text {
 		display: inline;
 	}
