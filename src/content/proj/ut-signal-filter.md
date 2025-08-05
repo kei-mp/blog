@@ -3,6 +3,7 @@ title: 'Signal vs. Noise'
 description: 'Simple example of filtering noise out of a UT signal'
 pubDate: 'Jun 26 2025'
 heroImage: '/ut-machine.webp'
+tags: ["#elec", "#dsp", "#python"]
 ---
 
 When developing the in-line inspecition robot to measure wall thickness of carbon steel pipes using ultrasonic probes, we encountered a lot of noise affecting the signal. The noise came from the electric motors used to drive the tool through the pipe, structural noise from the carbon steel cavity resonance, and the cables acting as mini antennas due to their long lengths. The below is an example of modeling the signal, noise, and showing how effective a simple band-pass filter can be.

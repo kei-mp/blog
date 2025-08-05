@@ -3,6 +3,7 @@ title: 'How I built the Graph'
 description: 'Have these for future reference but also to help others discover them'
 pubDate: 'Mar 06 2025'
 heroImage: '/digraph.png'
+tags: ["#software"]
 ---
 
 The blog post graph on the homepage is a force-directed graph using the [d3-force](https://d3js.org/d3-force) javascript library. It takes inspiration from the note-graph built into the Obsidian note taking app. I don't personnaly use Obisidian and prefer simple note taking apps or just pen and paper. In fact I believe a lot of developers use complicated note-taking tools and systems like Obsidian to feel productive and end up spending more time creating the perfect productivity system instead of being productive. That's in part why I believe [productivity systems should be like Subway](/blog/subway).
