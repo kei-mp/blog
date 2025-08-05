@@ -1,76 +1,64 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import Digraph from '../components/Digraph.vue';
+import GraphLayout from "../layouts/GraphLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div class="content">
-				<h3>Insights on Electro-Mechanical Engineering and Software Innovation</h3>
-				<p>Welcome to my blog, check out the <a href="/about">about</a> page if you want to learn about me and why I built this blog, otherwise read on.</p>
-				<p>
-					<!-- Update text based on screen size -->
-					<span class="desktop-text">To view a blog post, click on a post using the graph on the right, or see</span>
-					<span class="mobile-text">To view a blog post, click on a post using the graph above, or see</span>
-					<a href="/blog/graph">how I built it</a>.
-				</p>
-				<p>If you're not sure which to read, try:</p>
-			<ul>
-				<li><a href="/blog/quality-as-code">Quality as Code</a> - Why you should manage your procedures like software.</li>
-				<li><a href="/proj/ut-mech">Mechanical UT Scanner</a> - Building a mechanically-actuated wall-thickness scanning inline robotic tool, and why it's not a good idea.</li>
-			</ul>
-			<p>Or, check out some of my favorite <a href="/blog/interesting-articles">articles</a> and <a href="/blog/interesting-talks">talks</a> that I find inspiring.</p>
-			</div>
-			<Digraph client:load />
-		</main>
-			
-		<Footer />
-	</body>
-</html>
+<GraphLayout>
+	<h3>Insights on Electro-Mechanical Engineering and Software Innovation</h3>
+	<p>
+		Welcome to my blog, check out the <a href="/about">about</a>
+		page if you want to learn about me and why I built this blog, otherwise read
+		on.
+	</p>
+	<p>
+		<!-- update text based on screen size -->
+		<span class="desktop-text"
+			>To view a blog post, click on a post using the graph on the right,
+			or see</span
+		>
+		<span class="mobile-text"
+			>To view a blog post, click on a post using the graph above, or see</span
+		>
+		<a href="/blog/graph">how I built it</a>.
+	</p>
+	<p>If you're not sure which to read, try:</p>
+	<ul>
+		<li>
+			<a href="/blog/quality-as-code">Quality as Code</a> - Why you should
+			manage your procedures like software.
+		</li>
+		<li>
+			<a href="/proj/ut-mech">Mechanical UT Scanner</a> - Building a mechanically-actuated
+			wall-thickness scanning inline robotic tool, and why it's not a good
+			idea.
+		</li>
+	</ul>
+	<p>
+		Or, check out some of my favorite <a href="/blog/interesting-articles"
+			>articles</a
+		> and <a href="/blog/interesting-talks">talks</a> that I find inspiring.
+	</p>
+</GraphLayout>
 
 <style>
-	main {
-		width: 720px;
-		max-width: calc(100% - 2em);
-		margin: auto;
-		padding: 3em 1em;
-		display: grid;
-		grid-template-columns: 1fr 200px;
-		gap: 2em;
+	h3:first-child {
+		margin-top: 0;
 	}
 
-	.content {
-	  grid-column: 1;
-	}
-	
-	.mobile-text {
-	  display: none;
-	}
-  
-	@media (max-width: 720px) {
-	  main {
-		grid-template-columns: 1fr;
-	  }
-	  
-	  .content {
-		grid-row: 2;
-	  }
-  
-	  .desktop-text {
-		display: none;
-	  }
-  
-	  .mobile-text {
+	.desktop-text {
 		display: inline;
-	  }
 	}
-  </style>
+
+	.mobile-text {
+		display: none;
+	}
+
+	@media (max-width: 920px) {
+		.desktop-text {
+			display: none;
+		}
+
+		.mobile-text {
+			display: inline;
+		}
+	}
+</style>
