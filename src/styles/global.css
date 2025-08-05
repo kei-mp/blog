@@ -44,7 +44,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Update links to use variables */
 a {
   color: var(--primary);
 }
@@ -52,6 +51,7 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 12px;
 }
 
 body {
