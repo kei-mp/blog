@@ -1,49 +1,79 @@
 /* default to light mode, but respect user's browser preference */
+@import url('https://fonts.googleapis.com/css?family=Inter:700|Inter:400');
+
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --link-color: #0066cc;
-  --border-color: #e0e0e0;
+  --text: #080b11;
+  --background: #f8f9fc;
+  --primary: #567bae;
+  --secondary: #d0b49a;
+  --accent: #a4be79;
 }
 
 /* dark mode styles */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #1a1a1a;
-    --text-color: #ffffff;
-    --link-color: #66b3ff;
-    --border-color: #333333;
+    --text: #eef1f7;
+    --background: #030407;
+    --primary: #5176a9;
+    --secondary: #65492f;
+    --accent: #6c8641;
   }
 }
 
 /* manual dark mode class (overrides media query) */
-[data-theme="dark"] {
-  --bg-color: #1a1a1a;
-  --text-color: #ffffff;
-  --link-color: #66b3ff;
-  --border-color: #333333;
+[data-theme="light"] {
+  --text: #080b11;
+  --background: #f8f9fc;
+  --primary: #567bae;
+  --secondary: #d0b49a;
+  --accent: #a4be79;
 }
 
-[data-theme="light"] {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --link-color: #0066cc;
-  --border-color: #e0e0e0;
+[data-theme="dark"] {
+  --text: #eef1f7;
+  --background: #030407;
+  --primary: #5176a9;
+  --secondary: #65492f;
+  --accent: #6c8641;
 }
 
 /* Apply variables to body */
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--background);
+  color: var(--text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Update links to use variables */
 a {
-  color: var(--link-color);
+  color: var(--primary);
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
+
+body {
+  font-family: 'Inter';
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Inter';
+  font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 1.802rem; /* 28.8px */}
+
+h2 {font-size: 1.602rem; /* 25.6px */}
+
+h3 {font-size: 1.424rem; /* 22.72px */}
+
+h4 {font-size: 1.266rem; /* 20.32px */}
+
+h5 {font-size: 1.125rem; /* 18.08px */}
+
+small {font-size: 0.889rem; /* 14.24px */}
