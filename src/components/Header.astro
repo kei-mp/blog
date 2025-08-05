@@ -109,4 +109,34 @@ header {
 .header-social-links a {
   text-decoration: none;
 }
+
+@media (max-width: 420px) {
+  .header-nav {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+	padding-bottom: 1.5rem;
+  }
+
+  .header-title {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .header-social-links {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .header-internal-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
 </style>
