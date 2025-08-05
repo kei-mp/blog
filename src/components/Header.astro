@@ -1,5 +1,6 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import DarkModeToggle from "./DarkModeToggle.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
@@ -9,6 +10,7 @@ import { SITE_TITLE } from "../consts";
 			<h2><a href="/">{SITE_TITLE}</a></h2>
 		</div>
 		<div class="header-social-links">
+			<DarkModeToggle />
 			<a href="https://github.com/kei-mp" target="_blank">
 				<svg
 					viewBox="0 0 16 16"
