@@ -102,6 +102,7 @@ const createGraph = () => {
     .attr('font-size', '8px')
     .attr('text-anchor', 'middle')
     .attr('dy', '-8px')
+    .style('fill', 'var(--node-text-color)')
     .style('pointer-events', 'none');
 
   // create simulation
@@ -162,9 +163,10 @@ const updateGraph = () => {
   width: 100%;
   height: 100%;
   min-height: 100px; /* fallback */
-  background-color: #ffffff;
+  background-color: var(--background);
+  --node-text-color: var(--text);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow-color);
   overflow: hidden;
 }
 
