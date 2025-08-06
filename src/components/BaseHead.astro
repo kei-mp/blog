@@ -1,6 +1,8 @@
 ---
+// src/components/BaseHead.astro
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import ThemeInitializer from './ThemeInitializer.astro';
 import '../styles/global.css';
 import { SITE_TITLE } from '../consts';
 
@@ -27,6 +29,7 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 	href={new URL('rss.xml', Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
+<ThemeInitializer /> 
 
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
