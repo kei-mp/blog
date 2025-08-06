@@ -1,5 +1,6 @@
 ---
 // src/layouts/GraphLayout.astro
+import { ClientRouter } from 'astro:transitions';
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -13,13 +14,18 @@ import Graph from "../components/graph/graph.vue";
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<ClientRouter />
 	</head>
 	<body class="site-body">
 		<div class="site-content">
 			<Header />
 			<main class="main-container">
 				<div class="graph-container">
-					<Graph client:load data={graphData} />
+					<Graph 
+						client:load 
+						data={graphData}
+						transition:persist
+					/>
 				</div>
 				<div class="content">
 					<slot />
