@@ -180,15 +180,11 @@ export default {
         .attr("r", 5)
         .attr("fill", d => color(d.group))
         .style("cursor", d => (d.type === "blog" || d.type === "project") ? "pointer" : "default")
-        .on("click", (event, d) => {
-          if (d.type === "blog") {
-            event.stopPropagation();
-            window.location.href = `/blog/${d.id}`;
-          } else if (d.type === "project") {
-            event.stopPropagation();
-            window.location.href = `/proj/${d.id}`;
+        .on('click', (event, d) => {
+          if (d.url) {
+            window.location.href = d.url;
           }
-        })
+        });
 
       // always visible labels for tag nodes
       const tagLabels = this.svg.append("g")
