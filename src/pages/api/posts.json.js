@@ -1,3 +1,4 @@
+// src/pages/api/posts.json.js
 import { getCollection } from 'astro:content';
 
 export async function GET() {
@@ -9,6 +10,7 @@ export async function GET() {
       id: post.id,
       slug: post.slug,
       title: post.data.title,
+      tags: post.data.tags || [],
       x: undefined,  // D3 will set these
       y: undefined   // D3 will set these
     }));
