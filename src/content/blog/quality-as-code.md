@@ -2,6 +2,7 @@
 title: 'Quality as Code'
 description: 'Why you should manage your procedures like software'
 pubDate: 'Jul 30 2025'
+tags: ["#software"]
 ---
 
 There's been increasing trends towards getting more of IT stack checked into source control. You've heard of infrastructure as code, documentation as code - now let me propose quality as code.

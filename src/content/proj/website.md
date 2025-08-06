@@ -6,8 +6,30 @@ heroImage: '/website/island.jpg'
 tags: ["#software"]
 ---
 
-The blog post graph on the homepage is a force-directed graph using the [d3-force](https://d3js.org/d3-force) javascript library. It takes inspiration from the note-graph built into the Obsidian note taking app. I don't personnaly use Obisidian and prefer simple note taking apps or just pen and paper. In fact I believe a lot of developers use complicated note-taking tools and systems like Obsidian to feel productive and end up spending more time creating the perfect productivity system instead of being productive. That's in part why I believe [productivity systems should be like Subway](/blog/subway).
+The island photo will make sense in a minute - I tried using a screenshot of this website but seeing a photo of a website on the same website looked weird.
 
-The blog itself is built using Astro javascript framework using markdown content files that are rendered into html and uploaded to the Cloudflare CDN so that it's fast loading (and free to serve) for users, no matter where they are in the world. This is done as a built step on commits to the main branch or for pull requests (that spin up separate sites for review) using GitHub Actions.
+I wanted to build a personal website as a way to showcase some of the personal projects I've been working on, and also to have a place to share thoughts into the void. Paul Graham has an excellent essay on how writing can hone your thinking: [Putting Ideas into Words](https://www.paulgraham.com/words.html).
 
-You can find the source code for the [Graph](https://github.com/kei-mp/blog/blob/master/src/components/Digraph.vue) or [Blog](https://github.com/kei-mp/blog) on my GitHub.
+Now there are many ways to build a website with varying levels of difficulty: easy using WordPress, moderate using just html, css, and javascript, and complex using a fullstack framework like Next.js. This is a bit of a joke, but considering maintenance, it's probably not wrong.
+
+The way I built the website therefore had the following needs:
+
+- Fun to build at first, but easy to maintain
+- Have a node graph like [Obidian](https://obsidian.md/) or [Quartz](https://quartz.jzhao.xyz/) because I found them interesting and thought it would look cool
+- Be a tech stack I haven't used before (no ASP.NET or React)
+
+I had seen hype around Astro.js as a static site generator. One of it's core features was an "Island Architecture" (hence the photo) where you could break up your webpages and have sections or "islands" of interactive components. This sounded perfect for the node graph.
+
+![](/website/astro.jpg)
+
+When you first scaffold an Astro.js web app, using the blog, you're greeting with the below screen. Behind the scenes, Astro.js takes markdown files that are stored in a `contents` folder and loads them as html pages.
+
+![](/website/blog-template.png)
+
+I then created a Vue.js component using the d3-force library to create the graph and added it to the front page only. You could navigate to posts by clicking the nodes, but with the texts the graph was a little overwhelming. Besides, since this website would be a sort of portfolio, it would help people being able to rather see the posts linked to specific topics such as "mechanical" or "software" engineering.
+
+![](/website/old-graph.png)
+
+But the concept was proven and enough to steam ahead. So I added my own layout and styling, along with darkmode to ease eyestrain when coding at night. I ran into issues with trying to save the state of the graph (i.e. the position and velocity of the nodes) so that it didn't reset when navigating between pages. This turned out to be surprisingly easy with a built-in Astro [view-transition](https://docs.astro.build/en/guides/view-transitions/) feature.
+
+Now the website is what you see today. Check out the source code here: https://github.com/kei-mp/blog
