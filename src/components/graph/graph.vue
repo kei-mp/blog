@@ -27,29 +27,30 @@ export default {
           { source: "E", target: "A", value: 2 }
         ]
       })
-    },
-    width: {
-      type: Number,
-      default: 300
-    },
-    height: {
-      type: Number,
-      default: 300
     }
   },
   data() {
     return {
       simulation: null,
-      svg: null
+      svg: null,
+      width: 0,
+      height: 0,
+      resizeObserver: null
     }
   },
   mounted() {
+    this.initializeSize()
     this.createChart()
+    this.setupResizeObserver()
   },
   beforeUnmount() {
     // Clean up the simulation when component is destroyed
     if (this.simulation) {
       this.simulation.stop()
+    }
+    // Clean up the resize observer
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect()
     }
   },
   watch: {
@@ -61,6 +62,63 @@ export default {
     }
   },
   methods: {
+    initializeSize() {
+      const container = this.$refs.chartContainer
+      const rect = container.getBoundingClientRect()
+      this.width = rect.width || 300
+      this.height = rect.height || 300
+    },
+
+    setupResizeObserver() {
+      if (typeof ResizeObserver !== 'undefined') {
+        this.resizeObserver = new ResizeObserver((entries) => {
+          for (const entry of entries) {
+            const { width, height } = entry.contentRect
+            if (width > 0 && height > 0) {
+              this.width = width
+              this.height = height
+              this.updateChartSize()
+            }
+          }
+        })
+        this.resizeObserver.observe(this.$refs.chartContainer)
+      } else {
+        // Fallback for browsers without ResizeObserver
+        window.addEventListener('resize', this.handleWindowResize)
+      }
+    },
+
+    handleWindowResize() {
+      const container = this.$refs.chartContainer
+      const rect = container.getBoundingClientRect()
+      const newWidth = rect.width
+      const newHeight = rect.height
+      
+      if (newWidth !== this.width || newHeight !== this.height) {
+        this.width = newWidth
+        this.height = newHeight
+        this.updateChartSize()
+      }
+    },
+
+    updateChartSize() {
+      if (this.svg) {
+        this.svg
+          .attr("width", this.width)
+          .attr("height", this.height)
+          .attr("viewBox", [-this.width / 2, -this.height / 2, this.width, this.height])
+        
+        // Update force simulation center
+        if (this.simulation) {
+          this.simulation
+            .force("x", d3.forceX())
+            .force("y", d3.forceY())
+            .alpha(0.3)
+            .restart()
+        }
+      }
+    },
+
     createChart() {
       // Clear any existing content
       d3.select(this.$refs.chartContainer).selectAll("*").remove()
@@ -162,7 +220,7 @@ export default {
 <style scoped>
 .graph-container {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
