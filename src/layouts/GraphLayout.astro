@@ -33,6 +33,7 @@ import Graph from "../components/graph/graph.vue";
 			</main>
 		</div>
 		<Footer />
+		<script src="/src/styles/theme-persister.js"></script> 
 	</body>
 </html>
 
@@ -93,15 +94,3 @@ import Graph from "../components/graph/graph.vue";
 		}
 	}
 </style>
-
-<script is:inline>
-	// prevent flash of unstyled content
-	(function () {
-		const savedTheme = localStorage.getItem("theme");
-		const systemPrefersDark = window.matchMedia(
-			"(prefers-color-scheme: dark)",
-		).matches;
-		const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
-		document.documentElement.setAttribute("data-theme", theme);
-	})();
-</script>
