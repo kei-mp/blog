@@ -33,6 +33,16 @@ import Graph from "../components/graph/graph.vue";
 			</main>
 		</div>
 		<Footer />
+		<script>
+			import { navigate } from 'astro:transitions/client';
+
+			window.addEventListener('astro:navigate', (event) => {
+				const { url } = (event as CustomEvent).detail;
+				if (url) {
+					navigate(url);
+				}
+			});
+		</script>
 	</body>
 </html>
 

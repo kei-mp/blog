@@ -180,9 +180,15 @@ export default {
         .attr("r", 5)
         .attr("fill", d => color(d.group))
         .style("cursor", d => (d.type === "blog" || d.type === "project") ? "pointer" : "default")
-        .on('click', (event, d) => {
+        .on('click', (_event, d) => {
           if (d.url) {
-            window.location.href = d.url;
+            // dispatch a custom event to be handled on astro side
+            const navigateEvent = new CustomEvent('astro:navigate', {
+              bubbles: true,
+              composed: true,
+              detail: { url: d.url },
+            });
+            window.dispatchEvent(navigateEvent);
           }
         });
 
