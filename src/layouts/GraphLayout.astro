@@ -1,9 +1,12 @@
 ---
+// src/layouts/GraphLayout.astro
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Digraph from "../components/Digraph.vue";
+import { getGraphData } from "../components/graph/transform"
+const graphData = await getGraphData();
+import Graph from "../components/graph/graph.vue";
 ---
 
 <!doctype html>
@@ -16,7 +19,7 @@ import Digraph from "../components/Digraph.vue";
 			<Header />
 			<main class="main-container">
 				<div class="graph-container">
-					<Digraph client:load />
+					<Graph client:load data={graphData} />
 				</div>
 				<div class="content">
 					<slot />
