@@ -2,7 +2,7 @@
 title: 'Scraping LinkedIn Jobs with AI'
 description: 'Using AI and web scraping to conduct a skills gap analysis for the defense industry'
 pubDate: 'May 03 2025'
-heroImage: '/job-scraping-ai.jfif'
+heroImage: '/linkedin-scraping.svg'
 tags: ["#software"]
 ---
 
