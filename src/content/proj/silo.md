@@ -6,7 +6,7 @@ heroImage: '/silo/silo1.png'
 tags: ["#mech", "#fea", "#python"]
 ---
 
-I'm typing up this project 5 years after it was done so I may miss a few details. When working on the design of a small-scale cement manufacturing plant, a large capex reduction came from frakensteining equipment from moth-balled factories. We had a fabrication shop so I wondered if it would be possible and cheaper to fabricate the equipment instead. This was a personal project since I needed an excuse to practice more with python coding and running simulations in Ansys, plus a professional engineer would need to sign it off anyways.
+I'm typing up this project 5 years after it was done so I may miss a few details. When working on the design of a small-scale cement manufacturing plant, a large capex reduction came from frankensteining equipment from moth-balled factories. We had a fabrication shop so I wondered if it would be possible and cheaper to fabricate the equipment instead. This was a personal project since I needed an excuse to practice more with python coding and running simulations in Ansys, plus a professional engineer would need to sign it off anyways.
 
 I started by extracting repetitive calculations from the Eurocode standards on bulk silo cements (since the South African standards were essentially a copy and I could find them for free online):
 
@@ -273,7 +273,7 @@ z = h_c
 x = h_h
 
 x_i_lst = np.linspace(0, h_h, 10)  # x coordinates for plotting graph
-z_i_lst = np.linspace(0, h_c, 10)  # z cordinates for plotting graph
+z_i_lst = np.linspace(0, h_c, 10)  # z coordinates for plotting graph
 
 # wall filling loads
 wall_max_pn_f = []

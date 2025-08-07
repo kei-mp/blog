@@ -32,7 +32,7 @@ I then created a Vue.js component using the d3-force library to create the graph
 
 ![](/website/old-graph.png)
 
-But the concept was proven and enough to steam ahead. So I added my own layout and styling, along with darkmode to ease eyestrain when coding at night. I ran into issues with trying to save the state of the graph (i.e. the position and velocity of the nodes) so that it didn't reset when navigating between pages. This turned out to be surprisingly easy with a built-in Astro <a href="https://docs.astro.build/en/guides/view-transitions/" target="_blank">View Transitions</a> feature.
+But the concept was proven and enough to steam ahead. So I added my own layout and styling, along with dark mode to ease eyestrain when coding at night. I ran into issues with trying to save the state of the graph (i.e. the position and velocity of the nodes) so that it didn't reset when navigating between pages. This turned out to be surprisingly easy with a built-in Astro <a href="https://docs.astro.build/en/guides/view-transitions/" target="_blank">View Transitions</a> feature.
 
 
 
