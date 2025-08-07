@@ -1,5 +1,5 @@
 ---
-title: 'Signal vs. Noise'
+title: 'UT Signal Filter'
 description: 'Simple example of filtering noise out of a UT signal'
 pubDate: 'Jun 26 2025'
 heroImage: '/ut-machine.webp'

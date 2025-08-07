@@ -1,6 +1,6 @@
 ---
-title: 'AOOxalates'
-description: 'Online database of amount of oxalates in common foods'
+title: 'Oxalate Database'
+description: 'Web app to lookup the amount of oxalates in common foods'
 pubDate: 'Feb 08 2021'
 heroImage: '/oxalate.png'
 tags: ["#software"]
