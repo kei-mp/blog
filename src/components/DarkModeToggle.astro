@@ -25,31 +25,24 @@
     const sunIcon = document.getElementById('sun-icon');
     const moonIcon = document.getElementById('moon-icon');
     
-    // Get initial theme from localStorage or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!themeToggle || !sunIcon || !moonIcon) return;
+   
+    // get current theme from document (already set by inline script)
+    let currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     
-    let currentTheme;
-    if (savedTheme) {
-      currentTheme = savedTheme;
-    } else {
-      currentTheme = systemPrefersDark ? 'dark' : 'light';
-    }
-    
-    // Apply initial theme
-    document.documentElement.setAttribute('data-theme', currentTheme);
+    // update icons based on current theme
     updateIcons(currentTheme);
-    
-    // Toggle theme on button click
-    themeToggle?.addEventListener('click', () => {
+   
+    // toggle theme on button click
+    themeToggle.addEventListener('click', () => {
       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
       currentTheme = newTheme;
-      
+     
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       updateIcons(newTheme);
     });
-    
+   
     function updateIcons(theme) {
       if (theme === 'dark') {
         sunIcon.style.display = 'none';
@@ -60,12 +53,29 @@
       }
     }
   }
-  
-  // Initialize on page load
+ 
+  // initialize on page load
   document.addEventListener('DOMContentLoaded', initTheme);
-  
-  // Re-initialize on navigation (for Astro's client-side routing)
+ 
+  // re-initialize on navigation (for Astro's client-side routing)
   document.addEventListener('astro:page-load', initTheme);
+  
+  // handle View Transitions - preserve theme during navigation
+  document.addEventListener('astro:before-swap', () => {
+    // store current theme before swap
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme) {
+      localStorage.setItem('theme', currentTheme);
+    }
+  });
+  
+  document.addEventListener('astro:after-swap', () => {
+    // restore theme after swap
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  });
 </script>
 
 <style>
@@ -80,7 +90,7 @@
     color: var(--text-color);
     transition: background-color 0.2s ease;
   }
-  
+ 
   #theme-toggle:hover {
     background-color: var(--border-color);
   }

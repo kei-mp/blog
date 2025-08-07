@@ -30,6 +30,23 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 />
 <meta name="generator" content={Astro.generator} />
 
+<script is:inline>
+  (function() {
+    function setThemeFromStorage() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', systemPrefersDark ? 'dark' : 'light');
+      }
+    }
+    
+    // always apply theme from localStorage (preserves user's choice)
+    setThemeFromStorage();
+  })();
+</script>
+
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
   rel="stylesheet"
