@@ -8,14 +8,16 @@ tags: ["#software"]
 
 The island photo will make sense in a minute - I tried using a screenshot of this website but seeing a photo of a website on the same website looked weird.
 
-I wanted to build a personal website as a way to showcase some of the personal projects I've been working on, and also to have a place to share thoughts into the void. Paul Graham has an excellent essay on how writing can hone your thinking: [Putting Ideas into Words](https://www.paulgraham.com/words.html).
+I wanted to build a personal website as a way to showcase some of the personal projects I've been working on, and also to have a place to share thoughts into the void. Paul Graham has an excellent essay on how writing can hone your thinking: <a href="https://www.paulgraham.com/words.html" target="_blank">Putting Ideas into Words</a>.
+
+
 
 Now there are many ways to build a website with varying levels of difficulty: easy using WordPress, moderate using just html, css, and javascript, and complex using a fullstack framework like Next.js. This is a bit of a joke, but considering maintenance, it's probably not wrong.
 
 The way I built the website therefore had the following needs:
 
 - Fun to build at first, but easy to maintain
-- Have a node graph like [Obidian](https://obsidian.md/) or [Quartz](https://quartz.jzhao.xyz/) because I found them interesting and thought it would look cool
+- Have a node graph like <a href="https://obsidian.md/" target="_blank">Obsidian</a> or <a href="https://quartz.jzhao.xyz/" target="_blank">Quartz</a> because I found them interesting and thought it would look cool
 - Be a tech stack I haven't used before (no ASP.NET or React)
 
 I had seen hype around Astro.js as a static site generator. One of it's core features was an "Island Architecture" (hence the photo) where you could break up your webpages and have sections or "islands" of interactive components. This sounded perfect for the node graph.
@@ -30,7 +32,9 @@ I then created a Vue.js component using the d3-force library to create the graph
 
 ![](/website/old-graph.png)
 
-But the concept was proven and enough to steam ahead. So I added my own layout and styling, along with darkmode to ease eyestrain when coding at night. I ran into issues with trying to save the state of the graph (i.e. the position and velocity of the nodes) so that it didn't reset when navigating between pages. This turned out to be surprisingly easy with a built-in Astro [view-transition](https://docs.astro.build/en/guides/view-transitions/) feature.
+But the concept was proven and enough to steam ahead. So I added my own layout and styling, along with darkmode to ease eyestrain when coding at night. I ran into issues with trying to save the state of the graph (i.e. the position and velocity of the nodes) so that it didn't reset when navigating between pages. This turned out to be surprisingly easy with a built-in Astro <a href="https://docs.astro.build/en/guides/view-transitions/" target="_blank">View Transitions</a> feature.
+
+
 
 One challenge was how to get the Vue.js graph tied into Astro's view transitions. I couldn't find a direct way to call Astro functions from the graph, so instead a custom JavaScript event is launched from the graph that is handled by Astro:
 
@@ -47,4 +51,5 @@ One challenge was how to get the Vue.js graph tied into Astro's view transitions
 </script>
 ```
 
-Now the website is what you see today. Check out the source code here: https://github.com/kei-mp/blog
+Now the website is what you see today. Check out the source code here: <a href="https://github.com/kei-mp/blog" target="_blank">kei-mp/blog</a>
+

@@ -122,7 +122,13 @@ export default {
     createChart() {
       d3.select(this.$refs.chartContainer).selectAll("*").remove()
 
-      const color = d3.scaleOrdinal(d3.schemeCategory10)
+			// custom color scale
+			const colorScale = [
+				"#1f77b4", // blue
+				"#ff7f0e", // orange
+				"#999", // grey
+			]
+      const color = d3.scaleOrdinal(colorScale)
 
       // the force simulation mutates links and nodes, so create a copy
       const links = this.data.links.map(d => ({ ...d }))

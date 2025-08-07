@@ -25,8 +25,11 @@ Treating things like documentation as a first-class citizen, as important as sou
 
 The one catch is that if this were to be implemented, then subject matter experts would need to become competent using basic features of git and GitHub and even though I'm optimistic this could be done, I've seen how difficult it is to shift culture and longstanding ways of doing things. You'd have an easier time getting everyone to write procedures in excel.
 
-The above only gets you halfway there. You can take a workhorse to a library but you can't make it read. Maybe unlike horses, people want to work well and be good at their jobs. Daniel Pink wrote a great book about it called [Drive](https://www.danpink.com/books/drive/).
+The above only gets you halfway there. You can take a workhorse to a library but you can't make it read. Maybe unlike horses, people want to work well and be good at their jobs. Daniel Pink wrote a great book about it called <a href="https://www.danpink.com/books/drive/" target="_blank">Drive</a>.
 
-To help address this issue, I thought it would be cool to combine notes and a way for users to test themselves with flashcards. Kind of how RemNote does it. I've created [a basic prototype of how the UX would work](https://kei-mp.github.io/memnote/). The idea being people can gauge how well they know critical details using spaced repetition. You could also give HR access to the stats. This could replace a large part of company training platforms that get handed off to that poor intern cleaning your cars backseat, that just duplicate information (a big nono in software development) and create stupid questions that test the procedure and not the actual process. 
 
-[^1]: This is explained well in the book [Surviving ISO 9001](https://www.survivingiso9001.com/), that I recommend anyone dealing with ISO9001 read - even more so than the actual spec.
+
+To help address this issue, I thought it would be cool to combine notes and a way for users to test themselves with flashcards. Kind of how RemNote does it. I've created <a href="https://kei-mp.github.io/memnote/" target="_blank">a basic prototype of how the UX would work</a>. The idea being people can gauge how well they know critical details using spaced repetition. You could also give HR access to the stats. This could replace a large part of company training platforms that get handed off to that poor intern cleaning your cars backseat, that just duplicate information (a big nono in software development) and create stupid questions that test the procedure and not the actual process.
+
+[^1]: This is explained well in the book <a href="https://www.survivingiso9001.com/" target="_blank">Surviving ISO 9001</a>, that I recommend anyone dealing with ISO9001 read - even more so than the actual spec.
+
