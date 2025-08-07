@@ -22,7 +22,7 @@ Once I had the sketches on the planes, it was easy enough to create the model. T
 
 This design had the same dimensions of the physio-made brace, but the sharp slope for the finger support meant that it would dig in when the hand is flat for example when doing push-ups. The lofted base also just didn't look nice - a big point of 3D printing the base was to make it look less like a weapon.
 
-Using a spline instead allowed a much more flexible design and future alterations. a The first iteration was too tight around my knuckles, the second iteration was good enough.
+Using a spline instead allowed a much more flexible design and future alterations. The first iteration was too tight around my knuckles, the second iteration was good enough to use. I went with ABS plastic since it's generally stronger and less lightly to deform if left in a hot car, however it's worth exploring other material types that are more flexible.
 
 ![](/brace/prints.jpg)
 
