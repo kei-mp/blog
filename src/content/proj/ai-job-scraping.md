@@ -1,5 +1,5 @@
 ---
-title: 'Scraping LinkedIn Jobs with AI'
+title: 'Webscraping LinkedIn with AI'
 description: 'Using AI and web scraping to conduct a skills gap analysis for the defense industry'
 pubDate: 'May 03 2025'
 heroImage: '/linkedin-scraping.svg'

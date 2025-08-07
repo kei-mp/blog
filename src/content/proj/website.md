@@ -32,4 +32,19 @@ I then created a Vue.js component using the d3-force library to create the graph
 
 But the concept was proven and enough to steam ahead. So I added my own layout and styling, along with darkmode to ease eyestrain when coding at night. I ran into issues with trying to save the state of the graph (i.e. the position and velocity of the nodes) so that it didn't reset when navigating between pages. This turned out to be surprisingly easy with a built-in Astro [view-transition](https://docs.astro.build/en/guides/view-transitions/) feature.
 
+One challenge was how to get the Vue.js graph tied into Astro's view transitions. I couldn't find a direct way to call Astro functions from the graph, so instead a custom JavaScript event is launched from the graph that is handled by Astro:
+
+```html
+<script>
+  import { navigate } from 'astro:transitions/client';
+
+  window.addEventListener('astro:navigate', (event) => {
+    const { url } = (event as CustomEvent).detail;
+    if (url) {
+      navigate(url);
+    }
+  });
+</script>
+```
+
 Now the website is what you see today. Check out the source code here: https://github.com/kei-mp/blog
