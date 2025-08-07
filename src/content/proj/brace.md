@@ -27,3 +27,7 @@ Using a spline instead allowed a much more flexible design and future alteration
 ![](/brace/prints.jpg)
 
 I don't really wear my brace anymore but future improvements I would like to do is redesign it so that it only covers/supports the pinky, as well as use topology optimization to allow it to breathe better.
+
+## 3D Model
+
+<iframe width="100%" height="300" style="border:1px solid #eeeeee;" src="https://3dviewer.net/embed.html#model=https://raw.githubusercontent.com/kei-mp/blog/master/public/brace/handbrace.stl$camera=-21.28106,97.72603,118.24280,42.63206,12.50854,-9.58343,0.00000,1.00000,0.00000,45.00000$projectionmode=perspective$envsettings=fishermans_bastion,off$backgroundcolor=255,255,255,255$defaultcolor=200,200,200$defaultlinecolor=100,100,100$edgesettings=off,0,0,0,1"></iframe>
