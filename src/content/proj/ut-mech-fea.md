@@ -42,7 +42,7 @@ So is the current frame design not strong enough since the max stress is larger 
 
 ![](/ut-mech-fea/close-up.png)
 
-As can be seen in the above image, the ends of the slots act as stress amplifiers, causing the material to exceed it's yield strength. Interestingly this is how fracture mechanics work and can be used to predict the fatigue life of materials based on initial crack lengths and cyclical forces. Anyways, once the material exceeds it's yield strength, localized hardening of the material will occur known as strain or work hardening. This will cause the material to gain a new yield strength. You can see this depicted in the graph below. Basically what's happening is a bunch of crack dislocations are forming in the material that are making it harder for more cracks to propogate. The downside is that the material loses ductility (seen by the smaller area under the graph of the strain-hardened material).
+As can be seen in the above image, the ends of the slots act as stress amplifiers, causing the material to exceed it's yield strength. Interestingly this is how fracture mechanics work and can be used to predict the fatigue life of materials based on initial crack lengths and cyclical forces. Anyways, once the material exceeds it's yield strength, localized hardening of the material will occur known as strain or work hardening. This will cause the material to gain a new yield strength. You can see this depicted in the graph below. Basically what's happening is a bunch of crack dislocations are forming in the material that are making it harder for more cracks to propagate. The downside is that the material loses ductility (seen by the smaller area under the graph of the strain-hardened material).
 
 ![](/ut-mech-fea/strain-hardening.png)
 

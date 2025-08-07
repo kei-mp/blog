@@ -15,7 +15,7 @@ If any of the above sounds like your current company then keep reading on, other
 
 What makes me qualified to talk about this? I've worked in various industries and sizes of companies, and recently spent 3 years building up an in-house software product and seeing it through ISO9001 and DNV-CP-0635 audits. Writing good, fit-for-purpose software quickly is hard. Taking it through audit approvals is another monster. And that's ultimately why I'm proposing this case - as a pragmatic way to work better that I believe most people are missing.
 
-With software version control, changes are tracked line by line with a complete history of who changed what. Wondering who put added that obscure requirement? The one that doesn't make sense and requires you to jump through two more hoops? Software version control aplty has a feature called 'blame' that lists wrote it and when. If you use a software management system like GitHub, then you could even be linked to who approved the change and see any discussions on it.
+With software version control, changes are tracked line by line with a complete history of who changed what. Wondering who put added that obscure requirement? The one that doesn't make sense and requires you to jump through two more hoops? Software version control aptly has a feature called 'blame' that lists wrote it and when. If you use a software management system like GitHub, then you could even be linked to who approved the change and see any discussions on it.
 
 That's the other feature that's built into cheap and easy-to-use software management platforms - a very simple review,  approval, and ownership model that your quality team will hate how easy it is to use, since they'll lose the job security of being the only ones that know how to navigate the mazes they made.
 
@@ -29,7 +29,7 @@ The above only gets you halfway there. You can take a workhorse to a library but
 
 
 
-To help address this issue, I thought it would be cool to combine notes and a way for users to test themselves with flashcards. Kind of how RemNote does it. I've created <a href="https://kei-mp.github.io/memnote/" target="_blank">a basic prototype of how the UX would work</a>. The idea being people can gauge how well they know critical details using spaced repetition. You could also give HR access to the stats. This could replace a large part of company training platforms that get handed off to that poor intern cleaning your cars backseat, that just duplicate information (a big nono in software development) and create stupid questions that test the procedure and not the actual process.
+To help address this issue, I thought it would be cool to combine notes and a way for users to test themselves with flashcards. Kind of how RemNote does it. I've created <a href="https://kei-mp.github.io/memnote/" target="_blank">a basic prototype of how the UX would work</a>. The idea being people can gauge how well they know critical details using spaced repetition. You could also give HR access to the stats. This could replace a large part of company training platforms that get handed off to that poor intern cleaning your cars backseat, that just duplicate information (a big no-no in software development) and create stupid questions that test the procedure and not the actual process.
 
 [^1]: This is explained well in the book <a href="https://www.survivingiso9001.com/" target="_blank">Surviving ISO 9001</a>, that I recommend anyone dealing with ISO9001 read - even more so than the actual spec.
 

@@ -1,6 +1,6 @@
 ---
 title: 'The Productivity Trap'
-description: 'Why producitivity systems should work like Subway'
+description: 'Why productivity systems should work like Subway'
 pubDate: 'Mar 06 2025'
 ---
 
