@@ -18,4 +18,4 @@ So I build this web app to have an online database of common foods that could be
 
 The other issue is that different studies and sources can have widely varying results. I remember instant coffee for example was supposedly one of the main culprits, but it was because the scientist used a full cup of instant coffee powder instead of a normal-sized teaspoon serving. So this app also had every value linked to a source so that users could query or request to update values based on new information.
 
-Check out the source code here: https://github.com/kei-mp/oxalate
+Check out the source code here: <a href="https://github.com/kei-mp/oxalate" target="_blank">kei-mp/oxalate</a>
